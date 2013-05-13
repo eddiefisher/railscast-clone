@@ -1,0 +1,86 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.css.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   body.active_admin {
+//      .status_tag { background: #6090DB; }
+//   }
+//
+// Notice that Active Admin CSS rules are nested within a
+// 'body.active_admin' selector to prevent conflicts with
+// other pages in the app. It is best to wrap your changes in a 
+// namespace so they are properly recognized. You have options
+// if you e.g. want different styles for different namespaces:
+//
+// .active_admin       applies to any Active Admin namespace
+// .admin_namespace    applies to the admin namespace (eg: /admin)
+// .other_namespace    applies to a custom namespace named other (eg: /other)
+
+@import "redactor-rails";
+
+body.active_admin {
+  form {
+    div.redactor_box {
+      margin-left: 20%;
+      max-width: 77%;
+      border: 1px solid lightgray;
+    }
+    #{$all-text-inputs},textarea,select[multiple="multiple"] {
+      border: 1px solid #c9d0d6; @include rounded(3px); font-size: 1em; outline: none; padding: 5px 5px 7px; margin-bottom: 5px;
+    }
+    #{$all-text-inputs-focus},textarea:focus,select[multiple="multiple"]:focus {
+      border: 1px solid #99a2aa; @include shadow(0, 0, 4px, #99a2aa); @include transition(border, linear, 0.2s); @include transition(box-shadow, linear, 0.2s);
+    }
+    select[multiple="multiple"] { min-width: 200px;}
+  }
+  
+  #header {
+    ul#tabs > li a { @include rounded(3px); }
+    ul#tabs > li.has_nested:hover > a {
+      @include rounded-top(3px);
+    }
+    ul#tabs > li ul {
+      @include rounded-all(0, 3px, 3px, 3px)
+    }
+  }
+  &.logged_in {
+    .flash { top: 0px; }
+  }
+  .breadcrumb {
+    display: block;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.0em;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+  }
+  #title_bar {
+    padding: 0px 30px;
+    margin-bottom: 0;
+    
+    h2 { font-size: 1.5em; }
+    
+    .action_items a {
+      @include rounded(3px);
+      padding: 6px 8px 5px;
+    }
+    
+    #titlebar_left, #titlebar_right {
+      height: 40px;
+      vertical-align: middle;
+      display: table-cell;
+    }
+  }
+}

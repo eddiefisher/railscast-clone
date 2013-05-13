@@ -1,0 +1,27 @@
+<div class="grid_9">
+  <div class="episodes">
+    <% if !@episodes.blank? %>
+      <% for episode in @episodes %>
+      <div class="episode">
+        <div class="image">
+          <%= link_to image_tag("/assets/episodes/#{episode.permalink}/#{episode.permalink}.png", size: '200x125', class: 'thumbnail'), episode %>
+        </div>
+        <div class="desc">
+          <h3><%= link_to episode.name, episode %></h3>
+          <div class="description"><%= raw episode.description %></div>
+          <div class="tags">Tags: <%= raw episode.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <% end %>
+      <%= paginate @episodes %>
+    <% else %>
+      episodes not found
+    <% end %>
+  </div>
+</div>
+<div class="grid_3">
+  <div id="tag_cloud">
+    <%= render_navigation &tags_menu %>
+  </div>
+</div>

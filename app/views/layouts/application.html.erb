@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="grid_12 top">
+        <h1 id="logo" class="icon-play-circle"> Video</h1>
+      </div>
+      <div class="clear"></div>
+      <div class="grid_12">
+        <ul class="main_menu">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Episodes", episodes_path %></li>
+          <li><%= link_to "link text...", '#' %></li>
+          <li><%= link_to "link text...", '#' %></li>
+          <li><%= link_to "link text...", '#' %></li>
+          <li class="search"><center>Search: <input type="search" name="search" value="" id="search"></center></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="yield">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="grid_12">
+        <hr />
+        <p>Eddie Fisher 12/05/2013</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

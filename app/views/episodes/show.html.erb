@@ -1,0 +1,16 @@
+<div class="grid_12">
+  <div class="episode">
+    <div class="video">
+      <video poster="/assets/default_video.jpg" controls class="thumbnail" style="">
+        <source src="/assets/episodes/<%= @episode.permalink %>/<%= @episode.permalink %>.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+        <p>This is fallback content</p>
+      </video>
+    </div>
+    <div class="desc">
+      <div class="panel">
+        <h3><%= @episode.name %></h3>
+        <div class="notes"><%= raw @episode.notes %></div>
+      </div>
+    </div>
+  </div>
+</div>

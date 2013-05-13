@@ -1,0 +1,87 @@
+@import 'buthub-rails';
+@import 'navigation';
+@import 'episodes';
+.header .top {
+  padding: 10px 0;
+}
+.thumbnail {
+  border: 1px solid lightgray;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px rgba(153, 162, 170, 1);
+}
+
+.panel {
+  background: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 4px #dddddd;
+  margin-bottom: 20px;
+  & > h3 {
+    background-color: #eaeaea;
+    background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+       background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+            background-image: linear-gradient(#fafafa, #eaeaea);
+    text-shadow: white 0 1px 0;
+    border: solid 1px #cdcdcd;
+    border-color: #d4d4d4;
+    border-top-color: #e6e6e6;
+    border-bottom-color: #cdcdcd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px white inset;
+    font-size: 1.0em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0.5em;
+    color: #555;
+    padding: 5px 10px 3px 10px;
+  }
+  & > div {
+    padding: 3px 15px 15px 15px;
+  }
+}
+
+.code_block {
+margin: 12px 0;
+clear: both;
+  .code_header {
+    position: relative;
+    background-color: #E0E0E0;
+    font-size: 12px;
+    padding: 4px 7px;
+    border: solid 1px #b6b6b6;
+    border-bottom: none;
+  }
+  .CodeRay, .CodeRay pre {
+    font-family: "Menlo","Courier New","Terminal",monospace;
+    background-color: #232323;
+    color: #E6E0DB;
+  }
+  .CodeRay {
+    overflow: auto;
+    border: 1px solid #777;
+    border-top: none;
+    padding: 5px 7px;
+    font-size: 13px;
+    margin: 0;
+    line-height: 17px;
+    pre { margin-bottom: 0;}
+    .an { color:#E7BE69 }                      /* html attribute */
+    .c  { color:#BC9358; font-style: italic; } /* comment */
+    .ch { color:#509E4F }                      /* escaped character */
+    .cl { color:#FFF }                         /* class */
+    .co { color:#FFF }                         /* constant */
+    .fl { color:#A4C260 }                      /* float */
+    .fu { color:#FFC56D }                      /* function */
+    .gv { color:#D0CFFE }                      /* global variable */
+    .i  { color:#A4C260 }                      /* integer */
+    .il { background:#151515 }                 /* inline code */
+    .iv { color:#D0CFFE }                      /* instance variable */
+    .pp { color:#E7BE69 }                      /* doctype */
+    .r  { color:#CB7832 }                      /* keyword */
+    .kw { color:#CB7832 }                      /* keyword */
+    .rx { color:#A4C260 }                      /* regex */
+    .s  { color:#A4C260 }                      /* string */
+    .sy { color:#6C9CBD }                      /* symbol */
+    .ta { color:#E7BE69 }                      /* html tag */
+    .pc { color:#6C9CBD }                      /* boolean */
+  }
+}
